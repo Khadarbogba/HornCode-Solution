@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <title>HornCode Solution | Web Development Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FAVICON (Browser Icon) -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Poppins,sans-serif;
+    }
+
+    body {
+      background:#0f172a;
+      color:#fff;
+    }
+
+    header {
+      background:#020617;
+      padding:15px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    /* LOGO ANIMATION */
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      animation:slideIn 1.2s ease;
+    }
+
+    .logo img {
+      height:40px;
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity:0;
+        transform:translateX(-40px);
+      }
+      to {
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {transform:scale(1);}
+      50% {transform:scale(1.08);}
+      100% {transform:scale(1);}
+    }
+
+    nav a {
+      color:#fff;
+      text-decoration:none;
+      margin-left:15px;
+      font-size:14px;
+    }
+
+    nav a:hover {
+      color:#38bdf8;
+    }
+
+    .lang-btn {
+      background:#38bdf8;
+      color:#020617;
+      border:none;
+      padding:6px 15px;
+      border-radius:20px;
+      cursor:pointer;
+      font-size:12px;
+    }
+
+    .hero {
+      text-align:center;
+      padding:90px 8%;
+    }
+
+    .hero h2 {
+      font-size:38px;
+    }
+
+    .hero span {
+      color:#38bdf8;
+    }
+
+    .hero p {
+      max-width:650px;
+      margin:auto;
+      color:#cbd5f5;
+    }
+  .hero img{
+    width:100%;
+    border-radius:10px;
+  }
+
+    .btn {
+      display:inline-block;
+      margin-top:25px;
+      padding:12px 30px;
+      background:#38bdf8;
+      color:#020617;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    section {
+      padding:80px 8%;
+    }
+
+    .title {
+      text-align:center;
+      margin-bottom:45px;
+    }
+
+    .services,.grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card {
+      background:#020617;
+      padding:30px;
+      border-radius:15px;
+      transition:.3s;
+    }
+
+    .card:hover {
+      transform:translateY(-8px);
+      box-shadow:0 10px 30px rgba(56,189,248,.2);
+    }
+
+    .card h4 {
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    .card p {
+      color:#cbd5f5;
+      font-size:14px;
+    }
+
+    .pricing .card {
+      border:1px solid #38bdf8;
+      text-align:center;
+    }
+
+    footer {
+      background:#020617;
+      text-align:center;
+      padding:20px;
+      color:#94a3b8;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:#fff;
+      padding:15px;
+      border-radius:50%;
+      font-size:22px;
+      text-decoration:none;
+    }
+  @media (max-width:960px){
+    nav{display:none;}
+    .loo h1{display:none}
+  }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="HornCode Solution">
+      <h1>HornCode</h1>
+    </div>
+
+    <nav>
+      <a href="#home" data-so="Bogga Hore" data-en="Home">Bogga Hore</a>
+      <a href="#services" data-so="Adeegyada" data-en="Services">Adeegyadeena</a>
+      <a href="#portfolio" data-so="Shaqooyin" data-en="Portfolio">Shaqooyin</a>
+      <a href="#pricing" data-so="Qiimaha" data-en="Pricing">Qiimaha</a>
+      <a href="#contact" data-so="Xiriir" data-en="Contact">Xiriir</a>
+      </nav>
+      <button class="lang-btn" onclick="toggleLang()">EN</button>
+    
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <h2 data-so="Waxaan Dhisnaa <span>Website Casri ah</span>" data-en="We Build <span>Modern Websites</span>">
+      Waxaan Dhisnaa <span>Website Casri ah</span>
+    </h2>
+
+    <p data-so="HornCode Solution waxay ka caawisaa ganacsiyada inay online ku koraan." data-en="HornCode Solution helps businesses grow online.">
+      HornCode Solution waxay ka caawisaa ganacsiyada inay online ku koraan.
+    </p>
+    <img src="logo1.jpg" alt="logo">
+
+    <a href="#contact" class="btn" data-so="Bilow Hadda" data-en="Get Started">Bilow Hadda</a>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="title">
+      <h3 data-so="Adeegyadeena" data-en="Our Services">Adeegyadeena</h3>
+    </div>
+
+    <div class="services">
+      <div class="card">
+        <h4 data-so="Sameynta Website" data-en="Website Development">Sameynta Website</h4>
+        <p>Website degdeg ah, ammaan ah & mobile friendly</p>
+      </div>
+
+      <div class="card">
+        <h4>UI / UX Design</h4>
+        <p>Naqshad qurux badan oo soo jiidata macaamiisha</p>
+      </div>
+
+      <div class="card">
+        <h4 data-so="Dayactir" data-en="Maintenance">Dayactir</h4>
+        <p>Cusbooneysiin, SEO & amni</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="title">
+      <h3 data-so="Shaqooyinkeenii Hore" data-en="Our Portfolio">Shaqooyinkeenii Hore</h3>
+    </div>
+
+    <div class="grid">
+      <div class="card">Hospital Website</div>
+      <div class="card">Business Landing Page</div>
+      <div class="card">Personal Portfolio</div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing">
+    <div class="title">
+      <h3 data-so="Qiimaha Adeegyada" data-en="Pricing Plans">Qiimaha Adeegyada</h3>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h4>Basic</h4>
+        <p>$150 – Website fudud</p>
+      </div>
+
+      <div class="card">
+        <h4>Business</h4>
+        <p>$400 – Website ganacsi</p>
+      </div>
+
+      <div class="card">
+        <h4>Premium</h4>
+        <p>$700+ – Full system</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="title">
+      <h3 data-so="Nala Soo Xiriir" data-en="Contact Us">Nala Soo Xiriir</h3>
+    </div>
+
+    <form style="max-width:400px;margin:auto;text-align:center">
+      <input placeholder="Magacaaga" style="width:100%;padding:10px;margin:10px 0">
+      <input placeholder="Email" style="width:100%;padding:10px;margin:10px 0">
+      <textarea placeholder="Fariintaada" style="width:100%;padding:10px"></textarea>
+      <button class="btn" type="submit">Dir Fariin</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 HornCode Solution – All Rights Reserved
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/25261XXXXXXX" target="_blank">💬</a>
+
+  <script>
+    let lang="so";
+    function toggleLang(){
+      lang=lang==="so"?"en":"so";
+      document.querySelector(".lang-btn").innerText=lang==="so"?"EN":"SO";
+      document.querySelectorAll("[data-so]").forEach(el=>{
+        el.innerHTML=el.getAttribute("data-"+lang);
+      });
+    }
+  </script>
+
+</body>
+</html>
