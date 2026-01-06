@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khadarbogba.github.io/HornCode-Solution/sitemap.xml
