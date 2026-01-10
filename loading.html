@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DevNex Loader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(180deg, #2c2f7e, #1a1c4b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.loader-container {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+/* Logo */
+.logo-glow {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 25px #ffb703;
+  animation: pulse 2s infinite;
+}
+
+.logo-glow img {
+  width: 60px;
+}
+
+/* Brand */
+.brand {
+  margin-top: 15px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.brand span {
+  color: #ffb703;
+}
+
+/* Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255,255,255,0.2);
+  border-top: 4px solid #ffb703;
+  border-radius: 50%;
+  margin: 25px auto;
+  animation: spin 1s linear infinite;
+}
+
+/* Texts */
+.welcome {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.loading-text {
+  margin-top: 15px;
+  color: #ffb703;
+  font-weight: 500;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  margin: 10px 0 25px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: #ffb703;
+  transition: width 0.3s;
+}
+
+/* Tagline */
+.tagline {
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 15px #ffb703; }
+  50% { box-shadow: 0 0 30px #ffb703; }
+}
+  </style>
+</head>
+<body>
+
+  <div class="loader-container">
+    
+    <div class="logo-glow">
+      <img src="logo2.jpg" alt="Logo">
+    </div>
+
+    <h1 class="brand">
+      <span>horn</span>Code
+    </h1>
+
+    <div class="spinner"></div>
+
+    <p class="welcome">Welcome to hornCode Agency</p>
+
+    <p class="loading-text">Loading... <span id="percent">0%</span></p>
+
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+
+    <p class="tagline">
+      “Empowering Brands Through Digital Excellence – Building Digital Identities That Inspire Growth and Success”
+    </p>
+
+  </div>
+
+  <script>
+  let percent = 0;
+const percentText = document.getElementById("percent");
+const progress = document.querySelector(".progress");
+
+const interval = setInterval(() => {
+  percent++;
+  percentText.textContent = percent + "%";
+  progress.style.width = percent + "%";
+
+  if (percent >= 100) {
+    clearInterval(interval);
+
+    // kadib marka uu dhammaado
+    setTimeout(() => {
+      // tusaale redirect
+       window.location.href = "home.html";
+      console.log("Loading complete");
+    }, 5000);
+  }
+}, 40);
+  </script>
+</body>
+</html>
