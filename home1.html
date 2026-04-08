@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <title>HornCode Solution | Web Development Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="HornCode Solution waa shirkad sameysa website casri ah, mobile friendly & SEO leh oo loogu talagalay ganacsiyada." />
+
+  <meta name="keywords" content="web design, web development, website Somalia, HornCode Solution" />
+
+  <meta name="author" content="HornCode Solution" />
+  <!-- FAVICON (Browser Icon) -->
+  <link rel="icon" type="image/png" href="logo2.jpg">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+  }
+  
+  html{
+  scroll-behavior: smooth;
+}
+  body{
+    background:rgba(100,110,250,0.1);
+    flex-direction:column;
+    display:flex;
+  }
+  /*header*/
+  header{
+    z-index:1000;
+    padding:15px 6%;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    height:60px;
+    align-items:center;
+    position:sticky;
+    top:0;
+    border-bottom:3px solid #E2E8F0;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+  }
+  
+  .logo{display:flex;
+    align-items:center;
+    gap:10px;
+    animation:slideIn 1.2s ease;
+  }
+  @keyframes slideIn {
+      from {
+        opacity:0;
+        transform:translateX(-40px);
+      }
+      to {
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+  .logo img{height:40px;
+    border-radius:8px;
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse {
+      0% {transform:scale(1);}
+      50% {transform:scale(1.6);}
+      100% {transform:scale(1);}
+    }
+  nav ul{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    list-style:none;
+  }ul li a{text-decoration:0;padding:5px 10px;}
+  .menu{display:none;}
+  
+  section{
+    margin-bottom:40px; 
+    animation: fadeup linear;
+  }
+  @keyframes fadeup {
+      from {
+        opacity:0;
+        transform:translateY(40px) scale(0.5);
+      }
+      to {
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
+    }
+  /*hero section */
+  .hero{
+    align-items:center;
+    display:flex;
+    gap:30px;
+    padding:80px 10px 0 ;
+    background:rgb(100,110,250);
+    height:100%;
+    color:white;
+    line-height:1;
+    text-align:center;
+    margin-bottom:90px;
+  }
+  .hero .opening{width:55%;}
+  .hero .btn{
+    padding:13px 20px;
+    background:orange;
+    border-radius:30px;
+    text-decoration:0;
+    
+  }
+  .hero .button{
+    align-items:center;
+    display:flex;justify-content:center;
+    margin-bottom:34px;
+  }
+  .hero span{
+    color:orange;
+  }
+  .hero p{
+    margin:34px 0;
+  }
+  .btn1{background:orange; }
+  .btn2{
+    border:2px solid white;
+    padding:10px 20px;
+    border-radius:6px;
+    margin:0 10px;
+    text-decoration:none;
+    color:white;
+  }
+  .card{
+    width:45%;
+    padding:10px 10px 30px;
+    border:2px solid white;
+    border-left:8px solid orange;
+    margin:90px auto;
+    border-radius:15px;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.8);
+    background:rgba(70,110,250,1);
+    
+  }
+  .card .btn2{border:3px solid orange;background:rgba(200,0,255,0.7)}
+  .card .btn2:hover{background:orange;color:rgba(200,0,255,1)}
+   .card img{
+    width:100%;
+    margin-bottom:20px;
+    border-radius:10px;
+  }
+  .logo2{display:none;}
+  .logo1{display:block}
+  /*about section*/
+  .welcome{
+    height:100%;
+    padding:70px 0 20px;
+  }
+  .title{
+    text-align:center;
+    position:relative;
+    z-index:0;
+    margin:0px 0 30px;
+  }
+  
+  .line::before{
+    content:"";
+    position:absolute;
+    bottom:-8px;
+    left:40%;
+    background:orange;
+    width:180px;
+    height:4px;
+  }
+  .welcome .main{
+    display:flex;
+    align-items:center;
+    gap:15px; 
+    height:100%;
+  }
+  .welText{padding:10px; width:60%;  }
+  .welText p{
+    padding:15px 0;
+  }
+  .welText .bold{
+    font-weight:900;
+    font-size:18px;
+  }
+  .b{
+    background:#fff;
+    padding:10px 20px;
+    margin:20px 0;
+  }
+  .b h2{
+    color:rgb(80,100,255);
+    margin:10px 0;
+  }
+  .b p{padding:10px 0;}
+  .b p span{
+    color:red;
+    
+  }/* team */
+  .ceo{
+    width:76%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:30px;
+    background:white;
+  }
+  .ceo .txt{
+    display:flex;
+    gap:20px;
+    flex-direction:column
+  }
+  .txt .social-icons a{
+    background:rgba(0,0,0,0.2);
+  }
+  /* service */
+  #service{
+    background:white;
+    padding:30px 10px;
+    
+  }
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top:30px;
+    text-align:center;
+  }
+  .service-card {
+    border:1px solid black;
+    border-top:9px solid blue;
+    padding:30px;
+    border-radius:18px;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+  }
+
+  .service-card h1 {
+    font-size: 50px;
+  }
+
+  .service-card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .service-card p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Hover Effect */
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  }
+  /* packages */
+  .package .service-card{
+    border:none;
+    text-align:left;
+    padding:0px 0 20px;
+    overflow:hidden;
+    width:92%;
+    margin: 30px auto;
+  }
+   .package .service-card .price{
+     background:blue;
+     color:white;
+     text-align:center;
+     padding:40px;
+     margin-bottom:30px;
+   }
+  .price h1{padding:20px 0; color:orange;}
+  .service-card .c{padding:0 20px}
+  .service-card .c p{padding:5px}
+  .service-card h3,.service-card .txt{text-align:center}
+  .service-card a{
+    background:orange;
+    margin: 15px auto;
+    width:90%;
+    display:block;
+    text-align:center;
+    padding:12px;
+    border-radius:30px;
+    text-decoration:0;
+  }
+  /* contact */
+  #contact p{text-align:center}
+  #contact .service-card{
+    border-top:4px solid orange;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  #contact .service-card .icon{
+    height:100px;
+    align-items:center;
+    background:cyan;
+    width:100px;
+    font-size:60px;
+    margin:auto;
+    border-radius:50%;
+  }
+  #contact .service-card a,#service .service-card a{
+    width:30%;
+    background:0;
+    border:2px solid blue;
+    color:blue;
+    border-radius:12px;
+  }
+  #contact .service-card a:hover,#service .service-card a:hover{
+    background:blue;
+    color:white;
+  }
+  #end {
+    width:91%;
+    max-width:800px;
+    margin:40px auto;
+    border:none;
+  }
+  /* footer */
+  .footer{
+  background: linear-gradient(135deg,#0f172a,#020617);
+  color:#e5e7eb;
+  padding:60px 20px 20px;
+  font-family:Poppins,sans-serif;
+  }
+  .footer-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+  }
+  .footer h2, .footer h3{
+    color:white;
+    margin-bottom:15px;
+  }
+  .footer p{
+    line-height:1.7;
+    font-size:15px;
+  }
+  .footer ul{
+    list-style:none;
+    padding:0;
+  }
+  .footer ul li{
+    margin:10px 0;
+  }
+  .footer ul li a{
+    color:#cbd5f5;
+    text-decoration:none;
+  }
+  .footer ul li a:hover{
+    color:orange;
+  }
+  .social-icons a{
+    display:inline-flex;
+    width:40px;
+    height:40px;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,0.1);
+    border-radius:50%;
+    margin-right:10px;
+    color:white;
+    text-decoration:none;
+  }
+  .social-icons a:hover{
+    background:orange;
+    color:black;
+  }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1);
+    margin-top:40px;
+    padding-top:20px;
+    font-size:14px;
+  }
+  .footer-bottom .tagline{
+    color:orange;
+    margin-top:10px;
+  }
+  @media (max-width:500px){
+    .btn2{
+      display:block;
+      margin-bottom:10px;
+    }
+    h1{font-size: 19px;}
+  }
+  @media (max-width:960px){
+    nav ul {display:none;}
+    .hero{display:block}
+     .hero .opening{width:100%;}
+    .card{width:98%;}
+    .logo1{
+      display:none;
+    }
+    .logo2{
+      display:block}
+    .welcome .main{
+      display:block;
+    }
+    .welText{width:100%;}
+    .ceo{flex-direction:column;}
+    .cards{display:block;}
+    .service-card{margin:30px 0;}
+    .footer-container{display:flex;flex-direction:column;}
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo2.jpg">
+      <h1>hornCode solution</h1>
+    </div>
+    <nav>
+      <ul>
+         <li><a href="#home">Home</a></li>
+         <li><a href="#about">About</a></li>
+         <li><a href="#team">Team</a></li>
+         <li><a href="#service">Services</a></li>
+         <li><a href="#package">Packages</a></li>
+         <li><a href="#contact">Contact</a></li>
+      </ul>
+      <h1 class="menu">🟰</h1>
+    </nav>
+  </header>
+  
+  <section class="hero" id="home">
+    <div class="opening">
+      <div class="button">
+        <a href="#" class="btn">#1 Digital Agency in Horn of Africa</a>
+      </div>
+      <h1>We Build <span>Websites That Bring You Clients</span></h1>
+      
+      <p>
+        Your business deserves more than just a website — it needs a powerful online presence.
+        We create fast, modern, and conversion-focused websites that attract customers,
+        build trust, and increase your sales.
+      </p>
+      <div class="hero-actions">
+        <a href="#package" class="btn1 btn2">View Packagea</a>
+        <a href="#contact" class="btn2 ">Free Consultation</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="hornCode.jpg" class="logo1">
+      <img src="hornCode 1.jpg" class="logo2">
+      <p>
+    Stand out from your competitors with a professional website.
+    We design websites that make your brand look premium and help you win more clients.
+  </p>
+      <a href="#contact" class="btn2" >Start your project</a>
+    </div>
+  </section>
+  
+  <section class="welcome" id="about">
+    <div class="title">
+      <h2 class="">WELL COME TO HornCode AGENCY </h2>
+      <h2 class="line"></h2>
+    </div>
+    <div class="main">
+      <div class="welText">
+        <h3>We Turn Ideas Into Profitable Digital Solutions</h3>
+        <p>
+      HornCode Solution is a results-driven digital agency focused on helping businesses grow online.
+      We don’t just build websites — we build tools that generate leads and increase revenue.
+    </p>
+
+    <p>
+      Our approach combines modern design, clean code, and smart strategy to deliver websites
+      that are fast, user-friendly, and optimized for search engines.
+    </p>
+
+    <p>
+      Whether you're a startup, small business, or personal brand — we help you create a strong online presence
+      that builds trust and converts visitors into customers.
+    </p>
+
+    <p><strong>👉 Your growth is our mission.</strong></p>
+      </div>
+      <div class="b">
+        <h2>What you get from HornCode Solution</h2>
+        <p><span>✔️</span> Website Design & Development (HTML, CSS, JavaScript)</p>
+        <p><span>✔️</span> SEO Optimization & Website Speed Optimization</p>
+        <p><span>✔️</span> Business & Company Websites</p>
+        <p><span>✔️</span> Landing Pages & Portfolio Websites</p>
+        <p><span>✔️</span> E-commerce & Online Solutions</p>
+        <p><span>✔️</span> Responsive & User-Friendly Design</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="team">
+    <div class="title">
+      <h2 class="">TEAMKEENA XIRFADA LEH</h2>
+      <h2 class="line"></h2>
+    </div>
+    <div class="card ceo">
+      <div class="photo">
+        <img src="ceo.jpg">
+      </div>
+      <div class="txt">
+        <h2>Ahmed Mohammed</h2>
+        <h2>CEO & Founder – HornCode Solution</h2>
+        <p>
+      Ahmed is a passionate web developer and entrepreneur focused on helping businesses succeed online.
+      With strong skills in HTML, CSS, and JavaScript, he builds high-quality websites that deliver real results.
+    </p>
+
+    <p><strong>👉 Clean code. Smart strategy. Real growth.</strong></p>
+          <div class="social-icons">
+           <a href="https://khadarbogba.github.io/Portfolio1/">🌐</a>
+           <a href="#">📞</a>
+           <a href="#">📸</a>
+           <a href="#">💼</a>
+         </div>
+    
+      </div>
+    </div>
+  </section>
+
+   <section id="service">
+    <div class="title">
+      <h2 class="">ADEEGYADA XIRFADEEN AAN BIXINO</h2>
+      <h2 class="line"></h2>
+    </div>
+    <p>Waxaan diiradda saarnaa kobcinta ganacsigaaga iyo keenista natiijooyin dhab ah.
+    HornCode Solution waxay bixisaa xalal digital ah oo lagu kalsoonaan karo,
+    kuna habboon ganacsiyada Geeska Afrika.</p>
+      <div class="cards">
+
+    <div class="service-card">
+      <h1>&lt;/&gt;</h1>
+      <h2>Web Development</h2>
+    <p>Custom websites designed to convert visitors into paying customers.</p>
+      <a href="#contact">Get Started</a>
+    </div>
+
+    <div class="service-card">
+      <h1>🎨</h1>
+      <h2>UI / UX Design</h2>
+      <p>Modern and clean designs that improve user experience and engagement.</p>
+      <a href="#contact">Get Started</a>
+    </div>
+
+    <div class="service-card">
+      <h1>⚡</h1>
+      <h2>SEO Optimization</h2>
+    <p>Get found on Google and bring organic traffic to your business.</p>
+
+      <a href="#contact">Get Started</a>
+    </div>
+
+    <div class="service-card">
+      <h1>🛒</h1>
+      <h2>E-commerce Solutions</h2>
+      <p>Sell your products online with secure and powerful systems.</p>
+
+      <a href="#contact">Get Started</a>
+    </div>
+
+    <div class="service-card">
+      <h1>📱</h1>
+      <h2>Responsive Design</h2>
+      <p>
+        Website-yo si buuxda uga shaqeeya mobile,
+        tablet, iyo desktop, si macaamiishaadu
+        mar walba u helaan khibrad fiican.
+      </p>
+      <a href="#contact">Get Started</a>
+    </div>
+
+  </div>
+   </section>
+
+  <section class="package" id="package">
+    <div class="title">
+      <h2 class="">ADEEGYADA XIRFADEEN AAN BIXINO</h2>
+      <h2 class="line"></h2>
+    </div>
+    <div class="cards">
+      <div class="service-card">
+        <div class="price">
+          <h2>BASIC PACKAGE</h2>
+          <h1>Starter- $50</h1>
+    <p>Perfect for individuals and personal brands.</p>
+
+        </div>
+        <div class="c">
+          <p>✔️single page website</p>
+          <p>✔️Modern User Interface</p>
+          <p>✔️Fully Responsive Design</p>
+          <p>✔️SEO Friendly Content</p>
+          <p>✔️Skills Showcase Section</p>
+          <p>✔️Projects Portfolio Gallery</p>
+          <p>✔️Contact Information</p>
+          <p>✔️Basic SEO Setup</p>
+        </div>
+        <a href="https://wa.me/251996662711">Hada Dalbo</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="price">
+          <h1>Business- $199</h1>
+          <p>Best for growing businesses that need more features.</p>
+
+          <p>Website Ganacsi oo Dhamaystran</p>
+        </div>
+        <div class="c">
+          <p>✔️Everything in Basic Package</p>
+          <p>✔️5 Page Dynamic Website</p>
+          <p>✔️Custom Design & Layout</p>
+          <p>✔️Advanced SEO Optimization</p>
+          <p>✔️Social Media Integration</p>
+          <p>✔️Blog/News Section</p>
+          <p>✔️Google Analytics Setup</p>
+          <p>✔️6 Months Technical Support</p>
+        </div>
+        <a href="https://wa.me/251996662711">Hada Dalbo</a>
+      </div>
+      
+      <div class="service-card">
+        <div class="price">
+          <h1>Custom Solution</h1>
+          <p>Advanced projects tailored to your needs.</p>
+        </div>
+        <div class="c">
+          <p>✔️E-Commerce Website Development</p>
+          <p>✔️Custom Web Applications</p>
+          <p>✔️Complete Branding Package</p>
+          <p>✔️Digital Marketing Campaign</p>
+          <p>✔️Software System Development</p>
+          <p>✔️Enterprise Solutions</p>
+          <p>✔️Ongoing Maintenance</p>
+          <p>✔️Priority Support</p>
+        </div>
+        <h3>📞 Let’s Build Your Website</h3>
+        <p class="txt">contact us for quick chat</p>
+        <a href="https://wa.me/251996662711">Whatsapp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="title">
+      <h2 class="">CONTACT hornCode solution</h2>
+      <h2 class="line"></h2>
+    </div>
+    <p>Ready to grow your business online?
+      Contact us today and let’s start your project.</p>
+    <div class="cards">
+      <div class="service-card">
+        <h2 class="icon">📞</h2>
+        <h2>Call us</h2>
+        <h3>+251928752668</h3>
+        <h4>available</h4>
+        <a href="tel:+251928752668">Call Now</a>
+      </div>
+      
+      <div class="service-card">
+        <h2 class="icon">📩</h2>
+        <h2>Email us</h2>
+        <h3>khadae.az190@gmail.com</h3>
+        <h4>available</h4>
+        <a href="mailto:khadae.az190@gmail.com">Send Email</a>
+      </div>
+      
+      <div class="service-card">
+        <h2 class="icon">📞</h2>
+        <h2>Whatsapp</h2>
+        <h3>Quick response via WhatsApp</h3>
+        <h4>Direct message to CEO</h4>
+        <a href="https://wa.me/251996662711">Message Now</a>
+      </div>
+    </div>
+    <div class="service-card " id="end">
+      <h3>Diyar ma uthahay si an u bilowno projectiga?</h3>
+      <p>falcelin dagdag ah si aad u hesho nagalasoo xidhiidh whatsappka,
+        talefonka, ama emailka si aan uga wada hadalno projectgaga</p>
+      <a href="https://wa.me/251996662711">Whatsapp</a>
+      <a href="tel:+251928752668">Call Now</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-about">
+      <h2>HornCode Solution</h2>
+      <p>
+        HornCode Solution waa digital agency, xirfad leh oo bixiya
+        web development, branding, e-commerce, iyo SEO services
+        si ganacsiyada ay online ugu koraan Geeska Afrika.
+      </p>
+
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📞</a>
+        <a href="#">📸</a>
+        <a href="#">💼</a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About HornCode</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#service">Our Services</a></li>
+        <li><a href="#package">Website Packages</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-services">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="#service">Web Development Services</a></li>
+        <li><a href="#service">Branding & UI/UX Design</a></li>
+        <li><a href="#service">E-Commerce Solutions</a></li>
+        <li><a href="#service">Digital Marketing</a></li>
+        <li><a href="#service">SEO Optimization Services</a></li>
+        <li><a href="#package">Portfolio Websites</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 HornCode Solution. All rights reserved.</p>
+    <p>CEO: Ahmed Mohammed | Digital Solutions Agency</p>
+    <p>Karachi, Pakistan | Serving Clients Worldwide</p>
+    <p class="tagline">Empowering Businesses Through Digital Excellence</p>
+  </div>
+</footer>
+     
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href'))
+        .scrollIntoView({
+          behavior: 'smooth'
+        });
+    });
+  });
+</script>
+     
+</body>
+</html>
