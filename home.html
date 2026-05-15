@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <title>HornCode Solution | Web Development Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HornCode Solution waa shirkad sameysa website casri ah, mobile friendly & SEO leh oo loogu talagalay ganacsiyada." />
+  <meta name="keywords" content="web design, web development, website Somalia, HornCode Solution" />
+  <meta name="author" content="HornCode Solution" />
+  
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="logo2.jpg">
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- 1. RESET & VARIABLE STYLES --- */
+    :root {
+      --primary-color: rgb(100, 110, 250);
+      --secondary-color: orange;
+      --dark-color: #020617;
+      --light-bg: rgba(100, 110, 250, 0.1);
+      --border-color: #E2E8F0;
+      --transition-fast: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--light-bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* --- 2. LAYOUT COMPONENTS --- */
+    header {
+      z-index: 1000;
+      padding: 15px 6%;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      position: sticky;
+      top: 0;
+      border-bottom: 3px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slideIn 1.2s ease forwards;
+    }
+
+    .logo img {
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #334155;
+      padding: 8px 12px;
+      transition: var(--transition-fast);
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    section {
+      padding: 60px 6%;
+      animation: fadeUp 0.8s ease-out;
+    }
+
+    /* --- 3. COMMON BUTTONS --- */
+    .btn-main {
+      display: inline-block;
+      padding: 12px 25px;
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-fast);
+      text-align: center;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 165, 0, 0.4);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 12px 25px;
+      border: 2px solid white;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary-color);
+    }
+
+    /* --- 4. HERO SECTION --- */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: var(--primary-color);
+      color: white;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .hero .opening {
+      width: 55%;
+      text-align: left;
+    }
+
+    .hero .opening h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--secondary-color);
+    }
+
+    .hero p {
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 15px;
+    }
+
+    .hero .tag-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      display: inline-block;
+      margin-bottom: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Hero Side Card */
+    .hero .hero-card {
+      width: 45%;
+      padding: 30px;
+      border-left: 8px solid var(--secondary-color);
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-card img {
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .hero-card p {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .responsive-img-desktop { display: block; }
+    .responsive-img-mobile { display: none; }
+
+    /* --- 5. SECTIONS GENERAL TITLE --- */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      color: var(--dark-color);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--secondary-color);
+      width: 80px;
+      height: 4px;
+      border-radius: 2px;
+    }
+
+    /* --- 6. ABOUT SECTION --- */
+    .about .main-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .welText { width: 55%; }
+    .welText h3 { font-size: 24px; margin-bottom: 15px; color: var(--dark-color); }
+    .welText p { margin-bottom: 15px; line-height: 1.6; color: #475569; }
+
+    .features-box {
+      width: 45%;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .features-box h2 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .features-box p {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* --- 7. TEAM SECTION --- */
+    .ceo-card {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .ceo-card .photo img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--primary-color);
+    }
+
+    .ceo-card .txt h2 { color: var(--dark-color); font-size: 24px; }
+    .ceo-card .txt h3 { color: var(--primary-color); font-size: 18px; margin-bottom: 15px; }
+    .ceo-card .txt p { color: #475569; line-height: 1.6; margin-bottom: 15px; }
+
+    .social-icons a {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      border-radius: 50%;
+      margin-right: 10px;
+      color: var(--dark-color);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .social-icons a:hover {
+      background: var(--secondary-color);
+      color: white;
+    }
+
+    /* --- 8. SERVICES & GRID PACKAGES --- */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card-item {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: var(--transition-fast);
+    }
+
+    .card-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .service-style { border-top: 6px solid var(--primary-color); }
+    .service-style h1 { font-size: 45px; margin-bottom: 15px; }
+    .service-style h2 { font-size: 20px; margin-bottom: 15px; }
+    .service-style p { color: #475569; line-height: 1.5; }
+
+    .btn-card-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 20px;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+
+    .btn-card-link:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    /* Package Cards Specific */
+    .package-card {
+      padding: 0;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .package-card .price-header {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .price-header h2 { font-size: 20px; margin-bottom: 10px; }
+    .price-header h1 { font-size: 36px; color: var(--secondary-color); }
+
+    .package-card .features-list { padding: 25px; }
+    .package-card .features-list p { padding: 6px 0; color: #475569; }
+
+    .package-card .btn-order {
+      display: block;
+      width: 85%;
+      margin: 0 auto 25px;
+      text-align: center;
+    }
+
+    /* --- 9. CONTACT SECTION --- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .contact-card .icon-box {
+      height: 80px;
+      width: 80px;
+      background: rgba(100, 110, 250, 0.1);
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+    }
+
+    .cta-box {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 700px;
+      margin: 40px auto 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--secondary-color);
+    }
+
+    .cta-box h3 { margin-bottom: 15px; font-size: 22px; }
+    .cta-box p { margin-bottom: 25px; color: #475569; }
+    .cta-box .cta-buttons { display: flex; justify-content: center; gap: 15px; }
+
+    /* --- 10. FOOTER --- */
+    .footer {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e5e7eb;
+      padding: 60px 6% 20px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer h2, .footer h3 { color: white; margin-bottom: 20px; }
+    .footer p { line-height: 1.7; font-size: 15px; color: #94a3b8; }
+    .footer ul { list-style: none; }
+    .footer ul li { margin: 12px 0; }
+    .footer ul li a { color: #cbd5e1; text-decoration: none; transition: var(--transition-fast); }
+    .footer ul li a:hover { color: var(--secondary-color); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .footer-bottom .tagline { color: var(--secondary-color); margin-top: 5px; }
+
+    /* --- 11. ANIMATIONS --- */
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- 12. RESPONSIVE MEDIA QUERIES --- */
+    @media (max-width: 960px) {
+      header { padding: 15px 4%; }
+      .menu-btn { display: block; }
+      nav ul { display: none; } /* Halkan waxaad dambari ka dhisi kartaa mobile menu */
+      
+      section { padding: 40px 4%; }
+      .hero { flex-direction: column; text-align: center; padding-top: 60px; }
+      .hero .opening { width: 100%; text-align: center; }
+      .hero .opening h1 { font-size: 32px; }
+      .hero-actions { justify-content: center; }
+      .hero .hero-card { width: 100%; margin: 40px auto 0; }
+      
+      .responsive-img-desktop { display: none; }
+      .responsive-img-mobile { display: block; }
+
+      .about .main-content { flex-direction: column; }
+      .welText, .features-box { width: 100%; }
+      .ceo-card { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .cta-buttons { flex-direction: column; }
+      .section-title h2 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo2.jpg" alt="HornCode Logo">
+      <h1>HornCode Solution</h1>
+    </div>
+    <nav>
+      <ul>
+         <li><a href="#home">Home</a></li>
+         <li><a href="#about">About</a></li>
+         <li><a href="#team">Team</a></li>
+         <li><a href="#service">Services</a></li>
+         <li><a href="#package">Packages</a></li>
+         <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-btn">🟰</div>
+    </nav>
+  </header>
+  
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="opening">
+      <a href="#" class="tag-badge">#1 Digital Agency in Horn of Africa</a>
+      <h1>We Build <span>Websites That Bring You Clients</span></h1>
+      <p>
+        Your business deserves more than just a website — it needs a powerful online presence.
+        We create fast, modern, and conversion-focused websites that attract customers,
+        build trust, and increase your sales.
+      </p>
+      <div class="hero-actions">
+        <a href="#package" class="btn-main">View Packages</a>
+        <a href="#contact" class="btn-outline">Free Consultation</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="hornCode.jpg" class="responsive-img-desktop" alt="Dashboard View">
+      <img src="hornCode 1.jpg" class="responsive-img-mobile" alt="Mobile Dashboard View">
+      <p>
+        Stand out from your competitors with a professional website.
+        We design websites that make your brand look premium and help you win more clients.
+      </p>
+      <a href="#contact" class="btn-main" style="width: 100%;">Start your project</a>
+    </div>
+  </section>
+  
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="section-title">
+      <h2>Welcome To HornCode Agency</h2>
+    </div>
+    <div class="main-content">
+      <div class="welText">
+        <h3>We Turn Ideas Into Profitable Digital Solutions</h3>
+        <p>
+          HornCode Solution is a results-driven digital agency focused on helping businesses grow online.
+          We don’t just build websites — we build tools that generate leads and increase revenue.
+        </p>
+        <p>
+          Our approach combines modern design, clean code, and smart strategy to deliver websites
+          that are fast, user-friendly, and optimized for search engines.
+        </p>
+        <p>
+          Whether you're a startup, small business, or personal brand — we help you create a strong online presence
+          that builds trust and converts visitors into customers.
+        </p>
+        <p><strong>👉 Your growth is our mission.</strong></p>
+      </div>
+      <div class="features-box">
+        <h2>What you get from HornCode Solution</h2>
+        <p><span>✔️</span> Website Design & Development (HTML, CSS, JS)</p>
+        <p><span>✔️</span> SEO & Website Speed Optimization</p>
+        <p><span>✔️</span> Business & Company Websites</p>
+        <p><span>✔️</span> Landing Pages & Portfolio Websites</p>
+        <p><span>✔️</span> E-commerce & Online Solutions</p>
+        <p><span>✔️</span> Responsive & User-Friendly Design</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- TEAM SECTION -->
+  <section id="team" class="team">
+    <div class="section-title">
+      <h2>Meet the Founder</h2>
+    </div>
+    <div class="ceo-card">
+      <div class="photo">
+        <img src="ceo.jpg" alt="Ahmed Mohammed">
+      </div>
+      <div class="txt">
+        <h2>Khader Ahmed Khadr</h2>
+        <h3>CEO & Founder – HornCode Solution</h3>
+        <p>
+          Khader is a passionate web developer and entrepreneur focused on helping businesses succeed online.
+          With strong skills in HTML, CSS, and JavaScript, he builds high-quality websites that deliver real results.
+        </p>
+        <p><strong>👉 Clean code. Smart strategy. Real growth.</strong></p>
+        <div class="social-icons">
+          <a href="https://khadarbogba.github.io/Portfolio1/">🌐</a>
+          <a href="#">📞</a>
+          <a href="#">📸</a>
+          <a href="#">💼</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="service" class="services">
+    <div class="section-title">
+      <h2>Services That Grow Your Business</h2>
+    </div>
+    <p style="text-align: center; max-width: 700px; margin: -30px auto 40px; color: #475569;">
+      Waxaan diiradda saarnaa kobcinta ganacsigaaga iyo keenista natiijooyin dhab ah.
+      HornCode Solution waxay bixisaa xalal digital ah oo lagu kalsoonaan karo.
+    </p>
+    <div class="grid-container">
+      <div class="card-item service-style">
+        <h1>&lt;/&gt;</h1>
+        <h2>Web Development</h2>
+        <p>Custom websites designed to convert visitors into paying customers.</p>
+        <a href="#contact" class="btn-card-link">Get Started</a>
+      </div>
+      <div class="card-item service-style">
+        <h1>🎨</h1>
+        <h2>UI / UX Design</h2>
+        <p>Modern and clean designs that improve user experience and engagement.</p>
+        <a href="#contact" class="btn-card-link">Get Started</a>
+      </div>
+      <div class="card-item service-style">
+        <h1>⚡</h1>
+        <h2>SEO Optimization</h2>
+        <p>Get found on Google and bring organic traffic to your business.</p>
+        <a href="#contact" class="btn-card-link">Get Started</a>
+      </div>
+      <div class="card-item service-style">
+        <h1>🛒</h1>
+        <h2>E-commerce Solutions</h2>
+        <p>Sell your products online with secure and powerful systems.</p>
+        <a href="#contact" class="btn-card-link">Get Started</a>
+      </div>
+      <div class="card-item service-style">
+        <h1>📱</h1>
+        <h2>Responsive Design</h2>
+        <p>Website-yo si buuxda uga shaqeeya mobile, tablet, iyo desktop si macaamiishu u helaan khibrad fiican.</p>
+        <a href="#contact" class="btn-card-link">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES SECTION -->
+  <section class="packages" id="package">
+    <div class="section-title">
+      <h2>Our Website Packages</h2>
+    </div>
+    <div class="grid-container">
+      <div class="card-item package-card">
+        <div class="price-header">
+          <h2>BASIC PACKAGE</h2>
+          <h1>Starter - $50</h1>
+          <p>Perfect for individuals.</p>
+        </div>
+        <div class="features-list">
+          <p>✔️ single page website</p>
+          <p>✔️ Modern User Interface</p>
+          <p>✔️ Fully Responsive Design</p>
+          <p>✔️ SEO Friendly Content</p>
+          <p>✔️ Skills Showcase Section</p>
+        </div>
+        <a href="https://wa.me/251996662711" class="btn-main btn-order">Hada Dalbo</a>
+      </div>
+      
+      <div class="card-item package-card">
+        <div class="price-header">
+          <h2>BUSINESS PACKAGE</h2>
+          <h1>Business - $199</h1>
+          <p>Best for growing businesses.</p>
+        </div>
+        <div class="features-list">
+          <p>✔️ Everything in Basic</p>
+          <p>✔️ 5 Page Dynamic Website</p>
+          <p>✔️ Custom Design & Layout</p>
+          <p>✔️ Social Media Integration</p>
+          <p>✔️ 6 Months Support</p>
+        </div>
+        <a href="https://wa.me/251996662711" class="btn-main btn-order">Hada Dalbo</a>
+      </div>
+      
+      <div class="card-item package-card">
+        <div class="price-header">
+          <h2>CUSTOM SOLUTION</h2>
+          <h1>Custom Price</h1>
+          <p>Tailored to your needs.</p>
+        </div>
+        <div class="features-list">
+          <p>✔️ E-Commerce Systems</p>
+          <p>✔️ Custom Web Applications</p>
+          <p>✔️ Software Development</p>
+          <p>✔️ Priority Support</p>
+          <p style="text-align: center; font-weight: bold; margin-top: 10px;">Let’s Build Your System</p>
+        </div>
+        <a href="https://wa.me/251996662711" class="btn-main btn-order">Whatsapp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <div class="section-title">
+      <h2>Contact HornCode Solution</h2>
+    </div>
+    <p style="text-align: center; color: #475569; margin-bottom: 40px;">Ready to grow your business online? Contact us today.</p>
+    
+    <div class="contact-grid">
+      <div class="card-item contact-card">
+        <div class="icon-box">📞</div>
+        <h2>Call us</h2>
+        <h3>+251928752668</h3>
+        <a href="tel:+251928752668" class="btn-card-link">Call Now</a>
+      </div>
+      <div class="card-item contact-card">
+        <div class="icon-box">📩</div>
+        <h2>Email us</h2>
+        <p>khadae.az190@gmail.com</p>
+        <a href="mailto:khadae.az190@gmail.com" class="btn-card-link">Send Email</a>
+      </div>
+      <div class="card-item contact-card">
+        <div class="icon-box">💬</div>
+        <h2>WhatsApp</h2>
+        <p>Quick response via WhatsApp</p>
+        <a href="https://wa.me/251996662711" class="btn-card-link">Message Now</a>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>Diyar ma u tahay inaan bilowno mashruucaaga?</h3>
+      <p>Nagalala soo xiriir WhatsApp, Taleefon, ama Email si aan uga wada hadalno baahida ganacsigaaga.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/251996662711" class="btn-main">WhatsApp</a>
+        <a href="tel:+251928752668" class="btn-outline" style="border-color: var(--primary-color); color: var(--primary-color);">Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2>HornCode Solution</h2>
+        <p> HornCode Solution waa digital agency xirfad leh oo bixiya web development, branding, e-commerce, iyo SEO services si ganacsiyada ay online ugu koraan Geeska Afrika.</p>
+        <div class="social-icons" style="margin-top: 20px;">
+          <a href="#">🌐</a>
+          <a href="#">📞</a>
+          <a href="#">📸</a>
+          <a href="#">💼</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About HornCode</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#service">Our Services</a></li>
+          <li><a href="#package">Website Packages</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-services">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="#service">Web Development</a></li>
+          <li><a href="#service">Branding & UI/UX</a></li>
+          <li><a href="#service">E-Commerce</a></li>
+          <li><a href="#service">SEO Optimization</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 HornCode Solution. All rights reserved.</p>
+      <p class="tagline">Empowering Businesses Through Digital Excellence</p>
+    </div>
+  </footer>
+       
+  <!-- JAVASCRIPT -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
