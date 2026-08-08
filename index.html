@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HornCode Solution | Web Design & Development Agency in Ethiopia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HornCode Solution is a web design and software development agency in Ethiopia. We build modern, responsive and SEO-friendly websites, e-commerce solutions and custom software for businesses.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HornCode Solution">
+  <meta name="keywords" content="web design Ethiopia, web development Ethiopia, software company Ethiopia, website development Ethiopia, e-commerce Ethiopia, SEO Ethiopia, HornCode Solution">
+  <link rel="canonical" href="https://khadarbogba.github.io/HornCode-Solution/">
+  <link rel="icon" type="image/jpeg" href="logo2.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HornCode Solution | Web Design & Development Agency in Ethiopia">
+  <meta property="og:description" content="Professional web design, web development, e-commerce, SEO and custom software solutions for businesses in Ethiopia and the Horn of Africa.">
+  <meta property="og:url" content="https://khadarbogba.github.io/HornCode-Solution/" >
+  <meta property="og:image" content="https://khadarbogba.github.io/HornCode-Solution/logo2.jpg" >
+  <meta property="og:image:alt" content="HornCode Solution logo" >
+  <meta property="og:site_name" content="HornCode Solution">
+  <meta name="twitter:card" content="summary"  >
+  <meta name="twitter:title" content="HornCode Solution | Web Design & Development Agency in Ethiopia">
+  <meta name="twitter:description" content="Modern web design, web development, e-commerce, SEO and custom software solutions in Ethiopia.">
+  <meta name="twitter:image" content="https://khadarbogba.github.io/HornCode-Solution/logo2.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HornCode Solution",
+    "url": "https://khadarbogba.github.io/HornCode-Solution/",
+    "logo": "https://khadarbogba.github.io/HornCode-Solution/logo2.jpg",
+    "description": "HornCode Solution is a web design and software development agency in Ethiopia providing websites, e-commerce solutions, SEO and custom software development.",
+    "email": "khadae.az190@gmail.com",
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Ethiopia"
+      },
+      {
+        "@type": "Place",
+        "name": "Horn of Africa"
+      }
+    ],
+    "knowsAbout": [
+      "Web Design",
+      "Web Development",
+      "Software Development",
+      "E-commerce Development",
+      "SEO",
+      "UI/UX Design",
+      "Responsive Web Design",
+      "Custom Web Applications",
+      "School Management Systems",
+      "Hospital Websites"
+    ],
+    "sameAs": [
+      "https://github.com/Khadarbogba",
+      "https://www.facebook.com/profile.php?id=61585480060779"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect"href="https://fonts.googleapis.com" >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    html,body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg,#2c2f7e,#1a1c4b);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .loader-container {
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      padding: 30px 20px;
+    }
+
+    .logo-glow {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 15px #ffb703;
+      animation: pulse 2s infinite;
+    }
+
+    .logo-glow img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .brand {
+      margin-top: 18px;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .brand span {
+      color: #ffb703;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      border-top: 4px solid #ffb703;
+      border-radius: 50%;
+      margin: 25px auto;
+      animation: spin 1s linear infinite;
+    }
+
+    .welcome {
+      font-size: 14px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .loading-text {
+      margin-top: 15px;
+      color: #ffb703;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      margin: 10px 0 25px;
+      overflow: hidden;
+    }
+
+    .progress {
+      width: 0%;
+      height: 100%;
+      background: #ffb703;
+      border-radius: 10px;
+      transition: width 0.05s linear;
+    }
+
+    .tagline {
+      font-size: 12px;
+      opacity: 0.7;
+      line-height: 1.6;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        box-shadow: 0 0 15px #ffb703;
+      }
+
+      50% {
+        box-shadow: 0 0 30px #ffb703;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .spinner,
+      .logo-glow {
+        animation: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand {
+        font-size: 30px;
+      }
+
+      .logo-glow {
+        width: 80px;
+        height: 80px;
+      }
+
+      .logo-glow img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .tagline {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="loader-container" aria-label="HornCode Solution loading">
+    <div class="logo-glow">
+      <img src="logo2.jpg" alt="HornCode Solution logo" width="60" height="60">
+    </div>
+
+    <h1 class="brand"><span>horn</span>Code</h1>
+    <div class="spinner" aria-hidden="true"></div>
+    <p class="welcome">Welcome to HornCode Solution</p>
+    <p class="loading-text" aria-live="polite">Loading...<span id="percent">0%</span></p>
+
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Loading website">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <p class="tagline">Empowering Brands Through Digital Excellence — Building Digital Identities That Inspire Growth and Success.</p>
+  </main>
+
+  <noscript>
+    <div style="position: fixed;inset: 0;background: #1a1c4b;color: white;display: flex;align-items: center;justify-content: center;text-align: center;padding: 30px;font-family: Arial, sans-serif;">
+      <div>
+        <h1>HornCode Solution</h1>
+        <p style="margin: 15px 0;">Web Design & Development Agency in Ethiopia</p>
+        <a href="home.html"style="display: inline-block;padding: 12px 24px;background: #ffb703;color: #111;text-decoration: none;border-radius: 8px;font-weight: bold;">Visit Website</a>
+      </div>
+    </div>
+  </noscript>
+
+  <script>
+    const percentText = document.getElementById("percent");
+    const progress = document.getElementById("progress");
+    const progressBar = document.querySelector(".progress-bar");
+
+    let percent = 0;
+
+    const interval = setInterval(() => {
+      percent++;
+      percentText.textContent = percent + "%";
+      progress.style.width = percent + "%";
+      progressBar.setAttribute(
+        "aria-valuenow",
+        percent
+      );
+
+      if (percent >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 700);
+      }
+    }, 30);
+  </script>
+</body>
+</html>
